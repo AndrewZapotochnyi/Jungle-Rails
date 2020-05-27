@@ -4,6 +4,10 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if cart_subtotal_cents == 0 %>
+    <div class="alert alert-danger">A friendly message about how it is empty, followed by a link to the home page: <%= link_to 'link to the home page', :root %></div>
+      
+    <% else cart_subtotal_cents == 0 %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -15,6 +19,8 @@
         </tr>
       </thead>
       <tbody>
+
+        
         <% enhanced_cart.each do |item| %>
           <%= render 'item', product: item[:product], quantity: item[:quantity].to_i %>
         <% end %>
@@ -25,7 +31,7 @@
             TOTAL:
           </th>
           <th>
-            $<%= cart_subtotal_cents / 100.0 %>
+            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>
@@ -48,5 +54,9 @@
       <% end %>
     </div>
   </div>
+
+  <% end %>
+
+  
 
 </section>
