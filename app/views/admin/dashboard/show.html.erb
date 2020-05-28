@@ -1,2 +1,12 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1>Admin Dashboard </h1>
+
+
+<div class="alert alert-info" role="alert">
+  There are <%= @products_count %> products in the store.
+</div>
+
+<div class="alert alert-info" role="alert">
+  There are <%= @categories_count %> product categories available.
+</div>
+
+<%= link_to 'Link to the product and category admin list/index pages',  [:admin, :products] %>
