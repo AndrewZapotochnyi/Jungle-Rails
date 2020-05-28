@@ -14,7 +14,7 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def create
+  def create 
     @category = Category.new(category_params)
 
     if @category.save
