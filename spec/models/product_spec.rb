@@ -2,18 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   describe 'Validations' do
-    # validation tests/examples here
-    # it 'should have a name' do
-    #   @product = Product.new
-    #   expect(@product.name).to be_present
-    # end
-
-    # it "doesn't save when there is no name" do
-    #   category = Category.new(name: 'Test')
-    #   product = Product.new(price: 1, quantity: 1, category: category)
-    #   product.save
-    #   expect(product.errors.full_messages).to include("Name can't be blank")
-    # end
 
     it 'Saves' do
       category = Category.new(name: 'Test')
